@@ -28,18 +28,21 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Liémie));
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             this.tbId = new System.Windows.Forms.TextBox();
             this.tbMdp = new System.Windows.Forms.TextBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btnValider = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(154, 153);
+            this.label1.Location = new System.Drawing.Point(148, 202);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(91, 20);
             this.label1.TabIndex = 0;
@@ -50,49 +53,61 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(495, 153);
+            this.label2.Location = new System.Drawing.Point(516, 202);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(120, 20);
             this.label2.TabIndex = 1;
             this.label2.Text = "Mot de passe :";
             // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 30.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(231, 34);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(334, 47);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "Cabinet Kaliémie";
-            // 
             // tbId
             // 
-            this.tbId.Location = new System.Drawing.Point(158, 182);
+            this.tbId.Location = new System.Drawing.Point(152, 246);
             this.tbId.Name = "tbId";
             this.tbId.Size = new System.Drawing.Size(100, 20);
             this.tbId.TabIndex = 3;
             // 
             // tbMdp
             // 
-            this.tbMdp.Location = new System.Drawing.Point(499, 182);
+            this.tbMdp.Location = new System.Drawing.Point(520, 246);
             this.tbMdp.Name = "tbMdp";
             this.tbMdp.Size = new System.Drawing.Size(100, 20);
             this.tbMdp.TabIndex = 4;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::Liémie.Properties.Resources.logov2_ppe4;
+            this.pictureBox1.Location = new System.Drawing.Point(319, 12);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(147, 140);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 5;
+            this.pictureBox1.TabStop = false;
+            // 
+            // btnValider
+            // 
+            this.btnValider.Location = new System.Drawing.Point(319, 344);
+            this.btnValider.Name = "btnValider";
+            this.btnValider.Size = new System.Drawing.Size(147, 34);
+            this.btnValider.TabIndex = 6;
+            this.btnValider.Text = "Valider";
+            this.btnValider.UseVisualStyleBackColor = true;
             // 
             // Liémie
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnValider);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.tbMdp);
             this.Controls.Add(this.tbId);
-            this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Liémie";
             this.Text = "Connexion";
             this.Load += new System.EventHandler(this.Liémie_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -102,8 +117,9 @@
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox tbId;
         private System.Windows.Forms.TextBox tbMdp;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Button btnValider;
     }
 }
