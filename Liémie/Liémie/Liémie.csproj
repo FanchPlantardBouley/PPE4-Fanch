@@ -60,6 +60,12 @@
     <Compile Include="Status.Designer.cs">
       <DependentUpon>Status.cs</DependentUpon>
     </Compile>
+    <Compile Include="visites.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="visites.Designer.cs">
+      <DependentUpon>visites.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Liémie.resx">
       <DependentUpon>Liémie.cs</DependentUpon>
     </EmbeddedResource>
@@ -74,6 +80,9 @@
     </Compile>
     <EmbeddedResource Include="Status.resx">
       <DependentUpon>Status.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="visites.resx">
+      <DependentUpon>visites.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
