@@ -16,7 +16,7 @@ namespace Liémie
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Liémie());
+            Application.Run(new visites());
         }
     }
 }

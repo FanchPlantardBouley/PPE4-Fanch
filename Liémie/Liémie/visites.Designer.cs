@@ -99,7 +99,11 @@
             // 
             // cbSoins
             // 
+            this.cbSoins.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbSoins.FormattingEnabled = true;
+            this.cbSoins.Items.AddRange(new object[] {
+            "Oui",
+            "Non"});
             this.cbSoins.Location = new System.Drawing.Point(270, 152);
             this.cbSoins.Name = "cbSoins";
             this.cbSoins.Size = new System.Drawing.Size(121, 21);
@@ -107,7 +111,11 @@
             // 
             // cbSoinsajou
             // 
+            this.cbSoinsajou.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbSoinsajou.FormattingEnabled = true;
+            this.cbSoinsajou.Items.AddRange(new object[] {
+            "Oui",
+            "Non"});
             this.cbSoinsajou.Location = new System.Drawing.Point(234, 190);
             this.cbSoinsajou.Name = "cbSoinsajou";
             this.cbSoinsajou.Size = new System.Drawing.Size(121, 21);
