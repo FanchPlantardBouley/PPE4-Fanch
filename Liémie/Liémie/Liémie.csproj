@@ -33,8 +33,23 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Net" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -46,19 +61,92 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="administrateur.cs">
+      <DependentUpon>kaliemie.tt</DependentUpon>
+    </Compile>
+    <Compile Include="badge.cs">
+      <DependentUpon>kaliemie.tt</DependentUpon>
+    </Compile>
+    <Compile Include="categorie_indisponibilite.cs">
+      <DependentUpon>kaliemie.tt</DependentUpon>
+    </Compile>
+    <Compile Include="categ_soins.cs">
+      <DependentUpon>kaliemie.tt</DependentUpon>
+    </Compile>
+    <Compile Include="chambre_forte.cs">
+      <DependentUpon>kaliemie.tt</DependentUpon>
+    </Compile>
+    <Compile Include="convalescence.cs">
+      <DependentUpon>kaliemie.tt</DependentUpon>
+    </Compile>
+    <Compile Include="indisponibilite.cs">
+      <DependentUpon>kaliemie.tt</DependentUpon>
+    </Compile>
+    <Compile Include="infirmiere.cs">
+      <DependentUpon>kaliemie.tt</DependentUpon>
+    </Compile>
+    <Compile Include="infirmiere_badge.cs">
+      <DependentUpon>kaliemie.tt</DependentUpon>
+    </Compile>
+    <Compile Include="kaliemie.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>kaliemie.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="kaliemie.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>kaliemie.tt</DependentUpon>
+    </Compile>
+    <Compile Include="kaliemie.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>kaliemie.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="lieu_convalescence.cs">
+      <DependentUpon>kaliemie.tt</DependentUpon>
+    </Compile>
     <Compile Include="Liémie.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Liémie.Designer.cs">
       <DependentUpon>Liémie.cs</DependentUpon>
     </Compile>
+    <Compile Include="model_Kaliemie.cs" />
+    <Compile Include="patient.cs">
+      <DependentUpon>kaliemie.tt</DependentUpon>
+    </Compile>
+    <Compile Include="personne.cs">
+      <DependentUpon>kaliemie.tt</DependentUpon>
+    </Compile>
+    <Compile Include="personne_login.cs">
+      <DependentUpon>kaliemie.tt</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="soins.cs">
+      <DependentUpon>kaliemie.tt</DependentUpon>
+    </Compile>
+    <Compile Include="soins_visite.cs">
+      <DependentUpon>kaliemie.tt</DependentUpon>
+    </Compile>
     <Compile Include="Status.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Status.Designer.cs">
       <DependentUpon>Status.cs</DependentUpon>
+    </Compile>
+    <Compile Include="temoignage.cs">
+      <DependentUpon>kaliemie.tt</DependentUpon>
+    </Compile>
+    <Compile Include="token.cs">
+      <DependentUpon>kaliemie.tt</DependentUpon>
+    </Compile>
+    <Compile Include="type_soins.cs">
+      <DependentUpon>kaliemie.tt</DependentUpon>
+    </Compile>
+    <Compile Include="visite.cs">
+      <DependentUpon>kaliemie.tt</DependentUpon>
     </Compile>
     <Compile Include="visites.cs">
       <SubType>Form</SubType>
@@ -85,6 +173,14 @@
     <EmbeddedResource Include="visites.resx">
       <DependentUpon>visites.cs</DependentUpon>
     </EmbeddedResource>
+    <EntityDeploy Include="kaliemie.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>kaliemie.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="kaliemie.edmx.diagram">
+      <DependentUpon>kaliemie.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -100,6 +196,24 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\logov2_ppe4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="kaliemie.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>kaliemie.edmx</DependentUpon>
+      <LastGenOutput>kaliemie.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="kaliemie.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>kaliemie.edmx</DependentUpon>
+      <LastGenOutput>kaliemie.cs</LastGenOutput>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
