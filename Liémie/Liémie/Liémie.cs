@@ -38,7 +38,7 @@ namespace Liémie
             tbMdp.Text = "";
         }
 
-        public static string connexion(string login, string passwd)
+        /*public static string connexion(string login, string passwd)
         {
             string vretour = "Error";
             var url = "http://www.btssio-carcouet.fr/ppe4/public/connect2/" + login + "/" + passwd + "/infirmiere";
@@ -58,7 +58,7 @@ namespace Liémie
                 vretour = identifiant;
             }
             return vretour;
-        }
+        }*/
 
         private void btnValider_Click(object sender, EventArgs e)
         {
@@ -67,10 +67,30 @@ namespace Liémie
             {
                 co = false;
                 MessageBox.Show("L\'indentifiant et le mot de passe ne peuvent pas être vides");
-                    }
-                if (co) {         
-            connexion(tbId.Text, tbMdp.Text);
             }
+            
+                /*if (co) {         
+            connexion(tbId.Text, tbMdp.Text);
+            }*/
+
+            if (co)
+            {
+                string id = tbId.Text;
+            string mdp = tbMdp.Text;
+            bool test = modele_Kaliemie.valideConnexion(id, mdp);
+            if (test == true)
+            {
+                string unId = modele_Kaliemie.RenvoyerIdVisiteur(id);
+                Status f = new Status();
+                f.Show();
+            }
+            else
+            {
+                MessageBox.Show(" L'identifiant ou le mot de passe est incorrect !");
+            }
+            }
+
+
         }
     }
 }
