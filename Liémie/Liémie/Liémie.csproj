@@ -62,49 +62,34 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="administrateur.cs">
-      <DependentUpon>kaliemie.tt</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="badge.cs">
-      <DependentUpon>kaliemie.tt</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="categorie_indisponibilite.cs">
-      <DependentUpon>kaliemie.tt</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="categ_soins.cs">
-      <DependentUpon>kaliemie.tt</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="chambre_forte.cs">
-      <DependentUpon>kaliemie.tt</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="convalescence.cs">
-      <DependentUpon>kaliemie.tt</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="indisponibilite.cs">
-      <DependentUpon>kaliemie.tt</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="infirmiere.cs">
-      <DependentUpon>kaliemie.tt</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="infirmiere_badge.cs">
-      <DependentUpon>kaliemie.tt</DependentUpon>
-    </Compile>
-    <Compile Include="kaliemie.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>kaliemie.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="kaliemie.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>kaliemie.tt</DependentUpon>
-    </Compile>
-    <Compile Include="kaliemie.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>kaliemie.edmx</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="lieu_convalescence.cs">
-      <DependentUpon>kaliemie.tt</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Liémie.cs">
       <SubType>Form</SubType>
@@ -112,23 +97,38 @@
     <Compile Include="Liémie.Designer.cs">
       <DependentUpon>Liémie.cs</DependentUpon>
     </Compile>
+    <Compile Include="Model1.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.edmx</DependentUpon>
+    </Compile>
     <Compile Include="model_Kaliemie.cs" />
     <Compile Include="patient.cs">
-      <DependentUpon>kaliemie.tt</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="personne.cs">
-      <DependentUpon>kaliemie.tt</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="personne_login.cs">
-      <DependentUpon>kaliemie.tt</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="soins.cs">
-      <DependentUpon>kaliemie.tt</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="soins_visite.cs">
-      <DependentUpon>kaliemie.tt</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Status.cs">
       <SubType>Form</SubType>
@@ -137,16 +137,16 @@
       <DependentUpon>Status.cs</DependentUpon>
     </Compile>
     <Compile Include="temoignage.cs">
-      <DependentUpon>kaliemie.tt</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="token.cs">
-      <DependentUpon>kaliemie.tt</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="type_soins.cs">
-      <DependentUpon>kaliemie.tt</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="visite.cs">
-      <DependentUpon>kaliemie.tt</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="visites.cs">
       <SubType>Form</SubType>
@@ -173,12 +173,12 @@
     <EmbeddedResource Include="visites.resx">
       <DependentUpon>visites.cs</DependentUpon>
     </EmbeddedResource>
-    <EntityDeploy Include="kaliemie.edmx">
+    <EntityDeploy Include="Model1.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>kaliemie.Designer.cs</LastGenOutput>
+      <LastGenOutput>Model1.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <None Include="kaliemie.edmx.diagram">
-      <DependentUpon>kaliemie.edmx</DependentUpon>
+    <None Include="Model1.edmx.diagram">
+      <DependentUpon>Model1.edmx</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\DataSources\administrateur.datasource" />
@@ -231,15 +231,15 @@
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="kaliemie.Context.tt">
+    <Content Include="Model1.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>kaliemie.edmx</DependentUpon>
-      <LastGenOutput>kaliemie.Context.cs</LastGenOutput>
+      <DependentUpon>Model1.edmx</DependentUpon>
+      <LastGenOutput>Model1.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="kaliemie.tt">
+    <Content Include="Model1.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>kaliemie.edmx</DependentUpon>
-      <LastGenOutput>kaliemie.cs</LastGenOutput>
+      <DependentUpon>Model1.edmx</DependentUpon>
+      <LastGenOutput>Model1.cs</LastGenOutput>
     </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

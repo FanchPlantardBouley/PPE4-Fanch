@@ -50,26 +50,16 @@ namespace Liémie
 
             if (co) {
                 string lib;
-                lib = modele_Kaliemie.connexionWebService(tbId.Text, tbMdp.Text);
+                /*if(Model_Keliemie.ConnexionLocal(tb_identifiant.Text, tb_motDePasse.Text) == "Error_local_request")
+                {
+                     Model_Keliemie.connexionWebService(tb_identifiant.Text, tb_motDePasse.Text);
+                }*/
+                //lib = Model_Keliemie.ConnexionLocal(tb_identifiant.Text,Model_Keliemie.encode(tb_motDePasse.Text));
+                lib = model_Kaliemie.connexionWebService(tbId.Text, tbMdp.Text);
                 MessageBox.Show(lib);
-                MessageBox.Show(modele_Kaliemie.affichepersonne());}
-            
 
-            if (co)
-            {
-            string id = tbId.Text;
-            string mdp = tbMdp.Text;
-            bool test = modele_Kaliemie.valideConnexion(id, mdp);
-            if (test == true)
-            {
-                string unId = modele_Kaliemie.RenvoyerIdVisiteur(id);
-                Status f = new Status();
-                f.Show();
-            }
-            else
-            {
-                MessageBox.Show(" L'identifiant ou le mot de passe est incorrect !");
-            }
+
+
             }
 
 

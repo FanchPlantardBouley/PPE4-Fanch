@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="d327882e199646169ece60b818de13cf" Name="Diagram1" ZoomLevel="82">
+        <EntityTypeShape EntityType="ppe4Model.badge" Width="1.5" PointX="6" PointY="12.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="ppe4Model.categ_soins" Width="1.5" PointX="6" PointY="6.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="ppe4Model.categorie_indisponibilite" Width="1.5" PointX="3" PointY="6.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="ppe4Model.chambre_forte" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ppe4Model.convalescence" Width="1.5" PointX="10.5" PointY="12.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ppe4Model.indisponibilite" Width="1.5" PointX="5.25" PointY="8.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="ppe4Model.infirmiere" Width="1.5" PointX="3" PointY="8.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="ppe4Model.infirmiere_badge" Width="1.5" PointX="8.25" PointY="9.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="ppe4Model.lieu_convalescence" Width="1.5" PointX="3" PointY="12.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="ppe4Model.patient" Width="1.5" PointX="8.25" PointY="12.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="ppe4Model.personne" Width="1.5" PointX="0.75" PointY="12.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="ppe4Model.personne_login" Width="1.5" PointX="3" PointY="17.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="ppe4Model.soins" Width="1.5" PointX="10.5" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ppe4Model.soins_visite" Width="1.5" PointX="15.75" PointY="8.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ppe4Model.temoignage" Width="1.5" PointX="5.25" PointY="15.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="ppe4Model.token" Width="1.5" PointX="5.25" PointY="18.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="ppe4Model.type_soins" Width="1.5" PointX="8.25" PointY="6" IsExpanded="true" />
+        <EntityTypeShape EntityType="ppe4Model.visite" Width="1.5" PointX="13.5" PointY="10.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="ppe4Model.administrateur" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
+        <AssociationConnector Association="ppe4Model.infirmiere_badge_infirmiere_badge_ibfk_2" ManuallyRouted="false" />
+        <AssociationConnector Association="ppe4Model.type_soins_type_soins_ibfk_1" ManuallyRouted="false" />
+        <AssociationConnector Association="ppe4Model.indisponibilite_indisponibilite_ibfk_2" ManuallyRouted="false" />
+        <AssociationConnector Association="ppe4Model.convalescence_convalescence_ibfk_1" ManuallyRouted="false" />
+        <AssociationConnector Association="ppe4Model.convalescence_convalescence_ibfk_2" ManuallyRouted="false" />
+        <AssociationConnector Association="ppe4Model.indisponibilite_indisponibilite_ibfk_1" ManuallyRouted="false" />
+        <AssociationConnector Association="ppe4Model.infirmiere_infirmiere_ibfk_1" ManuallyRouted="false" />
+        <AssociationConnector Association="ppe4Model.infirmiere_badge_infirmiere_badge_ibfk_1" ManuallyRouted="false" />
+        <AssociationConnector Association="ppe4Model.patient_patient_ibfk_3" ManuallyRouted="false" />
+        <AssociationConnector Association="ppe4Model.visite_visite_ibfk_2" ManuallyRouted="false" />
+        <AssociationConnector Association="ppe4Model.lieu_convalescence_lieu_convalescence_ibfk_1" ManuallyRouted="false" />
+        <AssociationConnector Association="ppe4Model.patient_patient_ibfk_1" ManuallyRouted="false" />
+        <AssociationConnector Association="ppe4Model.patient_patient_ibfk_2" ManuallyRouted="false" />
+        <AssociationConnector Association="ppe4Model.visite_visite_ibfk_1" ManuallyRouted="false" />
+        <AssociationConnector Association="ppe4Model.personne_login_personne_login_ibfk_1" ManuallyRouted="false" />
+        <AssociationConnector Association="ppe4Model.temoignage_temoignage_ibfk_1" ManuallyRouted="false" />
+        <AssociationConnector Association="ppe4Model.token_token_ibfk_1" ManuallyRouted="false" />
+        <AssociationConnector Association="ppe4Model.soins_FK_soins" ManuallyRouted="false" />
+        <AssociationConnector Association="ppe4Model.soins_visite_soins_visite_ibfk_2" ManuallyRouted="false" />
+        <AssociationConnector Association="ppe4Model.soins_visite_soins_visite_ibfk_1" ManuallyRouted="false" />
+        <AssociationConnector Association="ppe4Model.specialisation" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
