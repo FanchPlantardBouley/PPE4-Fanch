@@ -47,12 +47,12 @@ namespace Liémie
             return sb.ToString();
         }
 
-       /* public static string ConnexionLocal(string login, string password)
+       public static string ConnexionLocal(string login, string password)
         {
             string vretour = "Error_local_request";
             password = encode(password); //cryptage
 
-            var LQuery = maConnexion.personne.ToList()
+            var LQuery = maConnexion.personne_login.ToList()
                             .Where(x => x.login == login)
                            .Select(x => new { x.login, x.mp });
 
@@ -62,7 +62,7 @@ namespace Liémie
                 { vretour = login; }
             }
             return vretour;
-        }*/
+        }
         public static string connexionWebService(string login, string password)
         {
             string vretour = "Error_web_service_request";

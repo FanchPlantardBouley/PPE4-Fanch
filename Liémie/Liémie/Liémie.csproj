@@ -107,10 +107,10 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
-    <Compile Include="Model1.Designer.cs">
+    <Compile Include="mdlKaliemie.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>Model1.edmx</DependentUpon>
+      <DependentUpon>mdlKaliemie.edmx</DependentUpon>
     </Compile>
     <Compile Include="model_Kaliemie.cs" />
     <Compile Include="patient.cs">
@@ -173,12 +173,12 @@
     <EmbeddedResource Include="visites.resx">
       <DependentUpon>visites.cs</DependentUpon>
     </EmbeddedResource>
-    <EntityDeploy Include="Model1.edmx">
+    <EntityDeploy Include="mdlKaliemie.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>Model1.Designer.cs</LastGenOutput>
+      <LastGenOutput>mdlKaliemie.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <None Include="Model1.edmx.diagram">
-      <DependentUpon>Model1.edmx</DependentUpon>
+    <None Include="mdlKaliemie.edmx.diagram">
+      <DependentUpon>mdlKaliemie.edmx</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\DataSources\administrateur.datasource" />
@@ -196,9 +196,11 @@
     <None Include="Properties\DataSources\Liémie.Properties.Resources.datasource" />
     <None Include="Properties\DataSources\Liémie.Properties.Settings.datasource" />
     <None Include="Properties\DataSources\modele_Kaliemie.datasource" />
+    <None Include="Properties\DataSources\model_Kaliemie.datasource" />
     <None Include="Properties\DataSources\patient.datasource" />
     <None Include="Properties\DataSources\personne.datasource" />
     <None Include="Properties\DataSources\personne_login.datasource" />
+    <None Include="Properties\DataSources\ppe4Entities1.datasource" />
     <None Include="Properties\DataSources\Program.datasource" />
     <None Include="Properties\DataSources\soins.datasource" />
     <None Include="Properties\DataSources\soins_visite.datasource" />
@@ -233,12 +235,12 @@
   <ItemGroup>
     <Content Include="Model1.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>Model1.edmx</DependentUpon>
+      <DependentUpon>mdlKaliemie.edmx</DependentUpon>
       <LastGenOutput>Model1.Context.cs</LastGenOutput>
     </Content>
     <Content Include="Model1.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>Model1.edmx</DependentUpon>
+      <DependentUpon>mdlKaliemie.edmx</DependentUpon>
       <LastGenOutput>Model1.cs</LastGenOutput>
     </Content>
   </ItemGroup>
