@@ -38,28 +38,7 @@ namespace Liémie
             tbMdp.Text = "";
         }
 
-        /*public static string connexion(string login, string passwd)
-        {
-            string vretour = "Error";
-            var url = "http://www.btssio-carcouet.fr/ppe4/public/connect2/" + login + "/" + passwd + "/infirmiere";
-            WebRequest request = WebRequest.Create(url);
-            request.Credentials = CredentialCache.DefaultCredentials;
-            WebResponse response = request.GetResponse();
-            Console.WriteLine(((HttpWebResponse)response).StatusDescription);
-            Stream dataStream = response.GetResponseStream();
-            StreamReader reader = new StreamReader(dataStream);
-
-            string responseFromServer = reader.ReadToEnd();
-
-            JObject JsonLogin = JObject.Parse(responseFromServer);
-            if (JsonLogin["nom"].ToString() != "" && JsonLogin["prenom"].ToString() != "")
-            {
-                string identifiant = JsonLogin["nom"].ToString() + " " + JsonLogin["prenom"].ToString();
-                vretour = identifiant;
-            }
-            return vretour;
-        }*/
-
+        
         private void btnValider_Click(object sender, EventArgs e)
         {
             bool co = true;
@@ -68,14 +47,17 @@ namespace Liémie
                 co = false;
                 MessageBox.Show("L\'indentifiant et le mot de passe ne peuvent pas être vides");
             }
+
+            if (co) {
+                string lib;
+                lib = modele_Kaliemie.connexionWebService(tbId.Text, tbMdp.Text);
+                MessageBox.Show(lib);
+                MessageBox.Show(modele_Kaliemie.affichepersonne());}
             
-                /*if (co) {         
-            connexion(tbId.Text, tbMdp.Text);
-            }*/
 
             if (co)
             {
-                string id = tbId.Text;
+            string id = tbId.Text;
             string mdp = tbMdp.Text;
             bool test = modele_Kaliemie.valideConnexion(id, mdp);
             if (test == true)
