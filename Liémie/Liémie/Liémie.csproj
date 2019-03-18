@@ -112,7 +112,7 @@
     <Compile Include="Liémie.Designer.cs">
       <DependentUpon>Liémie.cs</DependentUpon>
     </Compile>
-    <Compile Include="modele_Kaliemie.cs" />
+    <Compile Include="model_Kaliemie.cs" />
     <Compile Include="patient.cs">
       <DependentUpon>kaliemie.tt</DependentUpon>
     </Compile>
