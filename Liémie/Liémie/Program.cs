@@ -18,6 +18,7 @@ namespace Liémie
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+            model_Kaliemie.init();
             Application.Run(new Liémie());
         }
     }

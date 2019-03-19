@@ -39,6 +39,7 @@
             this.button1 = new System.Windows.Forms.Button();
             this.personneloginBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.personne_loginBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.personne_loginBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.personne_loginDataGridView = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -51,6 +52,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.personneloginBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.personne_loginBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.personne_loginBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.personne_loginDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
@@ -119,9 +121,7 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // personne_loginBindingSource
-            // 
-            this.personne_loginBindingSource.DataSource = typeof(Liémie.personne_login);
+           
             // 
             // personne_loginDataGridView
             // 
@@ -136,8 +136,8 @@
             this.dataGridViewTextBoxColumn6,
             this.dataGridViewTextBoxColumn7,
             this.dataGridViewTextBoxColumn8});
-            this.personne_loginDataGridView.DataSource = this.personne_loginBindingSource;
-            this.personne_loginDataGridView.Location = new System.Drawing.Point(619, 101);
+            this.personne_loginDataGridView.DataSource = this.personne_loginBindingSource1;
+            this.personne_loginDataGridView.Location = new System.Drawing.Point(715, 97);
             this.personne_loginDataGridView.Name = "personne_loginDataGridView";
             this.personne_loginDataGridView.Size = new System.Drawing.Size(300, 220);
             this.personne_loginDataGridView.TabIndex = 7;
@@ -194,7 +194,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(939, 450);
+            this.ClientSize = new System.Drawing.Size(1071, 450);
             this.Controls.Add(this.personne_loginDataGridView);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.btnValider);
@@ -211,6 +211,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.personneloginBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.personne_loginBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.personne_loginBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.personne_loginDataGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -228,6 +229,7 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.BindingSource personneloginBindingSource;
         private System.Windows.Forms.BindingSource personne_loginBindingSource;
+        private System.Windows.Forms.BindingSource personne_loginBindingSource1;
         private System.Windows.Forms.DataGridView personne_loginDataGridView;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
