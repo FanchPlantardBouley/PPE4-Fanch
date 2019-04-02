@@ -24,7 +24,7 @@ namespace Liémie
 
         private void Liémie_Load(object sender, EventArgs e)
         {
-
+            lblalerte.Text = "";
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -41,26 +41,29 @@ namespace Liémie
         
         private void btnValider_Click(object sender, EventArgs e)
         {
-            bool co = true;
-            if (tbId.Text == "" || tbMdp.Text == "")
+            lblalerte.Text = "";
+            if (tbId.Text != "" || tbMdp.Text != "")
             {
-                co = false;
-                MessageBox.Show("L\'indentifiant et le mot de passe ne peuvent pas être vides");
-            }
-
-            if (co) {
                 string lib;
-                /*if(Model_Keliemie.ConnexionLocal(tb_identifiant.Text, tb_motDePasse.Text) == "Error_local_request")
+                if (model_Kaliemie.ConnexionLocal(tbId.Text, tbMdp.Text) == "Error_local_request")
                 {
-                     Model_Keliemie.connexionWebService(tb_identifiant.Text, tb_motDePasse.Text);
-                }*/
+                    try
+                    {
+                        if (model_Kaliemie.connexionWebService(tbId.Text, tbMdp.Text) == "Error_local_request") ;
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.InnerException.ToString());
+                    }
+
+                }
                 //lib = Model_Keliemie.ConnexionLocal(tb_identifiant.Text,Model_Keliemie.encode(tb_motDePasse.Text));
-                lib = model_Kaliemie.connexionWebService(tbId.Text, tbMdp.Text);
-                MessageBox.Show(lib);
-
-
-
+                //lib = model_Kaliemie.connexionWebService(tbId.Text, tbMdp.Text);
+                //MessageBox.Show(lib);
             }
+            else { lblalerte.Text = "*Tous les champs doivent être remplient"; }
+
+
 
 
         }

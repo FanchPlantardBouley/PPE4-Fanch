@@ -81,63 +81,51 @@ namespace Liémie
             JObject JsonLogin = JObject.Parse(responseFromServer);
             if (JsonLogin["nom"].ToString() != "" && JsonLogin["prenom"].ToString() != "")
             {
-                string identifiant = JsonLogin["nom"].ToString() + " " + JsonLogin["prenom"].ToString();
-                vretour = identifiant;
-            }
-            return vretour;
-        }
-        public static bool AjoutPersonne_login(string nom, string prenom, string remarque, int anNais, int anMort, int idNation, int idStyle)
-        {
-            bool vretour = true;
-            try
-            {
-                personne_login PL = new personne_login();
-                PL.positeur = nom;
-                compositeurChoisi.prenomCompositeur = prenom;
-                compositeurChoisi.remarque = remarque;
-                compositeurChoisi.anNais = anNais;
-                compositeurChoisi.anMort = anMort;
-                compositeurChoisi.idNation = idNation;
-                compositeurChoisi.idStyle = idStyle;
-                maConnexion.COMPOSITEUR.Add(compositeurChoisi);
-                maConnexion.SaveChanges();
-            }
-            catch (Exception ex)
-            {
-                vretour = false;
-            }
-            return vretour;
-        }
-
-        public static bool AjoutPersonne(string lenom, string leprenom, string lesexe, DateTime ladatenaiss, DateTime ladatemort, string unead1, string unead2, int uncp, string uneville, string untel_fixe, string untel_port, string unmail )
-        {
-            bool vretour = true;
-            try
-            {
-                personne P = new personne();
-                P.nom = lenom;
-                P.prenom = leprenom;
-                P.sexe = lesexe;
-                P.date_naiss = ladatenaiss;
-                P.date_deces = ladatemort;
-                P.ad1 = unead1;
-                P.ad2 = unead2;
-                P.cp = uncp;
-                P.ville = uneville;
-                P.tel_fixe = untel_fixe;
-                P.tel_port = untel_port;
-                P.mail = unmail;
-                maConnexion.personne.Add(P);
-                maConnexion.SaveChanges();
-            }
-            catch (Exception ex)
-            {
-                vretour = false;
+                try
+                {
+                    personne p = new personne
+                    {
+                        id = Convert.ToInt32(JsonLogin["id"].ToString()),
+                        nom = Convert.ToString(JsonLogin["nom"]),
+                        prenom = Convert.ToString(JsonLogin["prenom"]),
+                        sexe = Convert.ToString(JsonLogin["sexe"]),
+                        date_naiss = Convert.ToDateTime(JsonLogin["date_naiss"]),                        
+                        date_deces = null,                        
+                        ad1 = Convert.ToString(JsonLogin["ad1"]),
+                        ad2 = Convert.ToString(JsonLogin["ad2"]),
+                        cp = Convert.ToInt32(JsonLogin["cp"]),
+                        ville = Convert.ToString(JsonLogin["ville"]),
+                        tel_fixe = Convert.ToString(JsonLogin["tel_fixe"]),
+                        tel_port = Convert.ToString(JsonLogin["tel_port"]),
+                        mail = Convert.ToString(JsonLogin["mail"]),
+                        
+                    };
+                    personne_login pl = new personne_login
+                    {
+                        id = Convert.ToInt32(JsonLogin["id"].ToString()),
+                        login = login,
+                        mp = encode(password),
+                        derniere_connexion = DateTime.Now.Date,
+                        nb_tentative_erreur = 0,
+                    };/*
+                    infirmiere i = new infirmiere
+                    {
+                        id = Convert.ToInt32(JsonLogin["id"].ToString()),
+                        infirmiere_badge = 
+                        fichier_photo = 
+                    };*/
+                    maConnexion.personne.Add(p);
+                    maConnexion.personne_login.Add(pl);
+                    maConnexion.SaveChanges();
+                }
+                
+                catch (Exception e) { vretour = e.ToString(); }
             }
             return vretour;
         }
 
-        public static bool AjoutPersonne_login(int unid, string lelogin, string lemdp, DateTime laderniereco, int unnb)
+
+    /*    public static bool AjoutPersonne_login(int unid, string lelogin, string lemdp, DateTime laderniereco, int unnb)
         {
             bool vretour = true;
             try
@@ -156,7 +144,7 @@ namespace Liémie
                 vretour = false;
             }
             return vretour;
-        }
+        }*/
 
     }
 }

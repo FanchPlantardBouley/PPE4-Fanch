@@ -41,14 +41,7 @@
             this.personne_loginBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.personne_loginBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.personne_loginDataGridView = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lblalerte = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.personneloginBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.personne_loginBindingSource)).BeginInit();
@@ -121,80 +114,32 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-           
-            // 
             // personne_loginDataGridView
             // 
             this.personne_loginDataGridView.AutoGenerateColumns = false;
             this.personne_loginDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.personne_loginDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn1,
-            this.dataGridViewTextBoxColumn2,
-            this.dataGridViewTextBoxColumn3,
-            this.dataGridViewTextBoxColumn4,
-            this.dataGridViewTextBoxColumn5,
-            this.dataGridViewTextBoxColumn6,
-            this.dataGridViewTextBoxColumn7,
-            this.dataGridViewTextBoxColumn8});
             this.personne_loginDataGridView.DataSource = this.personne_loginBindingSource1;
             this.personne_loginDataGridView.Location = new System.Drawing.Point(715, 97);
             this.personne_loginDataGridView.Name = "personne_loginDataGridView";
             this.personne_loginDataGridView.Size = new System.Drawing.Size(300, 220);
             this.personne_loginDataGridView.TabIndex = 7;
             // 
-            // dataGridViewTextBoxColumn1
+            // lblalerte
             // 
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "id";
-            this.dataGridViewTextBoxColumn1.HeaderText = "id";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "login";
-            this.dataGridViewTextBoxColumn2.HeaderText = "login";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            // 
-            // dataGridViewTextBoxColumn3
-            // 
-            this.dataGridViewTextBoxColumn3.DataPropertyName = "mp";
-            this.dataGridViewTextBoxColumn3.HeaderText = "mp";
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            // 
-            // dataGridViewTextBoxColumn4
-            // 
-            this.dataGridViewTextBoxColumn4.DataPropertyName = "derniere_connexion";
-            this.dataGridViewTextBoxColumn4.HeaderText = "derniere_connexion";
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            // 
-            // dataGridViewTextBoxColumn5
-            // 
-            this.dataGridViewTextBoxColumn5.DataPropertyName = "nb_tentative_erreur";
-            this.dataGridViewTextBoxColumn5.HeaderText = "nb_tentative_erreur";
-            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
-            // 
-            // dataGridViewTextBoxColumn6
-            // 
-            this.dataGridViewTextBoxColumn6.DataPropertyName = "personne";
-            this.dataGridViewTextBoxColumn6.HeaderText = "personne";
-            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
-            // 
-            // dataGridViewTextBoxColumn7
-            // 
-            this.dataGridViewTextBoxColumn7.DataPropertyName = "temoignage";
-            this.dataGridViewTextBoxColumn7.HeaderText = "temoignage";
-            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
-            // 
-            // dataGridViewTextBoxColumn8
-            // 
-            this.dataGridViewTextBoxColumn8.DataPropertyName = "token";
-            this.dataGridViewTextBoxColumn8.HeaderText = "token";
-            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
+            this.lblalerte.AutoSize = true;
+            this.lblalerte.ForeColor = System.Drawing.Color.Red;
+            this.lblalerte.Location = new System.Drawing.Point(337, 303);
+            this.lblalerte.Name = "lblalerte";
+            this.lblalerte.Size = new System.Drawing.Size(35, 13);
+            this.lblalerte.TabIndex = 8;
+            this.lblalerte.Text = "label3";
             // 
             // Liémie
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1071, 450);
+            this.Controls.Add(this.lblalerte);
             this.Controls.Add(this.personne_loginDataGridView);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.btnValider);
@@ -239,5 +184,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
+        private System.Windows.Forms.Label lblalerte;
     }
 }
