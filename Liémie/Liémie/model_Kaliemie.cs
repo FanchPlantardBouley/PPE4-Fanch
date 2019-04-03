@@ -79,7 +79,7 @@ namespace Liémie
             string responseFromServer = reader.ReadToEnd();
             vretour = responseFromServer;
             JObject JsonLogin = JObject.Parse(responseFromServer);
-            if (JsonLogin["nom"].ToString() != "" && JsonLogin["prenom"].ToString() != "")
+            if (!responseFromServer.Contains("\"status\":\"false\""))
             {
                 try
                 {
@@ -89,8 +89,8 @@ namespace Liémie
                         nom = Convert.ToString(JsonLogin["nom"]),
                         prenom = Convert.ToString(JsonLogin["prenom"]),
                         sexe = Convert.ToString(JsonLogin["sexe"]),
-                        date_naiss = Convert.ToDateTime(JsonLogin["date_naiss"]),                        
-                        date_deces = null,                        
+                        date_naiss = Convert.ToDateTime(JsonLogin["date_naiss"]),
+                        date_deces = null,
                         ad1 = Convert.ToString(JsonLogin["ad1"]),
                         ad2 = Convert.ToString(JsonLogin["ad2"]),
                         cp = Convert.ToInt32(JsonLogin["cp"]),
@@ -98,7 +98,7 @@ namespace Liémie
                         tel_fixe = Convert.ToString(JsonLogin["tel_fixe"]),
                         tel_port = Convert.ToString(JsonLogin["tel_port"]),
                         mail = Convert.ToString(JsonLogin["mail"]),
-                        
+
                     };
                     personne_login pl = new personne_login
                     {
@@ -117,10 +117,13 @@ namespace Liémie
                     maConnexion.personne.Add(p);
                     maConnexion.personne_login.Add(pl);
                     maConnexion.SaveChanges();
+                    vretour = "Ajout OK";
                 }
-                
+
                 catch (Exception e) { vretour = e.ToString(); }
             }
+            else { vretour = "Votre compte n'existe pas";}
+            
             return vretour;
         }
 

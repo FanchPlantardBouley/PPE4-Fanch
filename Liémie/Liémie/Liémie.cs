@@ -41,31 +41,24 @@ namespace Liémie
         
         private void btnValider_Click(object sender, EventArgs e)
         {
-            lblalerte.Text = "";
-            if (tbId.Text != "" || tbMdp.Text != "")
+             
+        lblalerte.Text = "";
+            if (tbId.Text != "" && tbMdp.Text != "")
             {
-                string lib;
                 if (model_Kaliemie.ConnexionLocal(tbId.Text, tbMdp.Text) == "Error_local_request")
                 {
-                    try
+                   
+                    if (model_Kaliemie.connexionWebService(tbId.Text, tbMdp.Text) != "Ajout OK")
                     {
-                        if (model_Kaliemie.connexionWebService(tbId.Text, tbMdp.Text) == "Error_local_request") ;
+                                        
+                        lblalerte.Text = model_Kaliemie.connexionWebService(tbId.Text, tbMdp.Text);
                     }
-                    catch (Exception ex)
-                    {
-                        MessageBox.Show(ex.InnerException.ToString());
-                    }
-
+                    else { lblalerte.Text = "WebService OK"; }
                 }
-                //lib = Model_Keliemie.ConnexionLocal(tb_identifiant.Text,Model_Keliemie.encode(tb_motDePasse.Text));
-                //lib = model_Kaliemie.connexionWebService(tbId.Text, tbMdp.Text);
-                //MessageBox.Show(lib);
+                else { lblalerte.Text = "Local OK"; }
             }
-            else { lblalerte.Text = "*Tous les champs doivent être remplient"; }
-
-
-
-
+            else { lblalerte.Text = "*Tous les champs doivent être remplis"; }
+            
         }
     }
 }
