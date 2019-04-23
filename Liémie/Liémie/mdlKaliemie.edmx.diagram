@@ -4,7 +4,7 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="a5a6d53f42064658b1c5e747847b7123" Name="Diagram1">
+      <Diagram DiagramId="9433f262d4784104bee3d5f7203c0e89" Name="Diagram1">
         <EntityTypeShape EntityType="mdlKaliemie.badge" Width="1.5" PointX="6" PointY="12.25" IsExpanded="true" />
         <EntityTypeShape EntityType="mdlKaliemie.categ_soins" Width="1.5" PointX="6" PointY="6.25" IsExpanded="true" />
         <EntityTypeShape EntityType="mdlKaliemie.categorie_indisponibilite" Width="1.5" PointX="3" PointY="6.375" IsExpanded="true" />

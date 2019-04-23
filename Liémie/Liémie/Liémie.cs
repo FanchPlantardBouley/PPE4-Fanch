@@ -55,7 +55,11 @@ namespace Liémie
                     }
                     else { lblalerte.Text = "WebService OK"; }
                 }
-                else { lblalerte.Text = "Local OK"; }
+                else { lblalerte.Text = "Local OK";
+                    Status m2 = new Status(model_Kaliemie.ConnexionLocal(tbId.Text, tbMdp.Text));
+                    m2.Show();
+                    this.Hide();
+                }
             }
             else { lblalerte.Text = "*Tous les champs doivent être remplis"; }
             
