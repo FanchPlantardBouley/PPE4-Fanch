@@ -33,6 +33,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.dgv_visites = new System.Windows.Forms.DataGridView();
             this.bs_visites = new System.Windows.Forms.BindingSource(this.components);
+            this.lbltest = new System.Windows.Forms.Label();
+            this.btnMaj = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_visites)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bs_visites)).BeginInit();
             this.SuspendLayout();
@@ -55,11 +57,32 @@
             this.dgv_visites.Size = new System.Drawing.Size(240, 150);
             this.dgv_visites.TabIndex = 1;
             // 
+            // lbltest
+            // 
+            this.lbltest.AutoSize = true;
+            this.lbltest.Location = new System.Drawing.Point(561, 109);
+            this.lbltest.Name = "lbltest";
+            this.lbltest.Size = new System.Drawing.Size(35, 13);
+            this.lbltest.TabIndex = 2;
+            this.lbltest.Text = "label2";
+            // 
+            // btnMaj
+            // 
+            this.btnMaj.Location = new System.Drawing.Point(253, 319);
+            this.btnMaj.Name = "btnMaj";
+            this.btnMaj.Size = new System.Drawing.Size(75, 23);
+            this.btnMaj.TabIndex = 3;
+            this.btnMaj.Text = "Mettre à jour les visites";
+            this.btnMaj.UseVisualStyleBackColor = true;
+            this.btnMaj.Click += new System.EventHandler(this.btnMaj_Click);
+            // 
             // Status
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnMaj);
+            this.Controls.Add(this.lbltest);
             this.Controls.Add(this.dgv_visites);
             this.Controls.Add(this.label1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -78,5 +101,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView dgv_visites;
         private System.Windows.Forms.BindingSource bs_visites;
+        private System.Windows.Forms.Label lbltest;
+        private System.Windows.Forms.Button btnMaj;
     }
 }

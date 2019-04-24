@@ -9,6 +9,7 @@ using System.Net;
 using Newtonsoft.Json.Linq;
 using Newtonsoft.Json.Serialization;
 using Newtonsoft.Json.Converters;
+using System.Globalization;
 
 namespace Liémie
 {
@@ -48,26 +49,30 @@ namespace Liémie
             return sb.ToString();
         }
 
-       public static string ConnexionLocal(string login, string password)
+        public static int ConnexionLocal(string login, string password)
         {
-            string vretour = "Error_local_request";
+            int vretour = -1; //si n'existe pas en local envoi -1
             password = encode(password); //cryptage
 
             var LQuery = maConnexion.personne_login.ToList()
                             .Where(x => x.login == login)
-                           .Select(x => new { x.login, x.mp });
+                           .Select(x => new { x.login, x.mp, x.id });
 
             foreach (var v in LQuery)
             {
-                if (v.mp == password)
-                { vretour = login; }
+                if (v.login == login && v.mp == password)
+                { vretour = v.id; break; }
+
+                if (v.login == login && v.mp != password)
+                {
+                    vretour = -2; break;
+                }
             }
             return vretour;
         }
-        public static string connexionWebService(string login, string password)
+        public static int connexionWebService(string login, string password)
         {
-            string vretour = "Error_web_service_request";
-            //var url = "http://172.16.4.224/service-web/app/public/connect?login=" + login + "&mdp=" + password;
+            int vretour;
             var url = "http://www.btssio-carcouet.fr/ppe4/public/connect2/" + login + "/" + password + "/infirmiere";
             WebRequest request = WebRequest.Create(url);
             request.Credentials = CredentialCache.DefaultCredentials;
@@ -77,20 +82,20 @@ namespace Liémie
             StreamReader reader = new StreamReader(dataStream);
 
             string responseFromServer = reader.ReadToEnd();
-            vretour = responseFromServer;
-            JObject JsonLogin = JObject.Parse(responseFromServer);
-            if (!responseFromServer.Contains("\"status\":\"false\""))
+            JObject JsonLogin = new JObject();
+            JsonLogin = JObject.Parse(responseFromServer);
+
+            if (!responseFromServer.Contains("{\"status\":\"false\"}"))
             {
                 try
                 {
                     personne p = new personne
                     {
-                        id = Convert.ToInt32(JsonLogin["id"].ToString()),
+                        id = Convert.ToInt32(JsonLogin["id"]),
                         nom = Convert.ToString(JsonLogin["nom"]),
                         prenom = Convert.ToString(JsonLogin["prenom"]),
                         sexe = Convert.ToString(JsonLogin["sexe"]),
                         date_naiss = Convert.ToDateTime(JsonLogin["date_naiss"]),
-                        date_deces = null,
                         ad1 = Convert.ToString(JsonLogin["ad1"]),
                         ad2 = Convert.ToString(JsonLogin["ad2"]),
                         cp = Convert.ToInt32(JsonLogin["cp"]),
@@ -98,8 +103,10 @@ namespace Liémie
                         tel_fixe = Convert.ToString(JsonLogin["tel_fixe"]),
                         tel_port = Convert.ToString(JsonLogin["tel_port"]),
                         mail = Convert.ToString(JsonLogin["mail"]),
-
                     };
+                    if (JsonLogin["date_deces"].HasValues) { p.date_deces = Convert.ToDateTime(JsonLogin["date_deces"]); }
+                    else { p.date_deces = null; }
+
                     personne_login pl = new personne_login
                     {
                         id = Convert.ToInt32(JsonLogin["id"].ToString()),
@@ -107,47 +114,27 @@ namespace Liémie
                         mp = encode(password),
                         derniere_connexion = DateTime.Now.Date,
                         nb_tentative_erreur = 0,
-                    };/*
+                    };
                     infirmiere i = new infirmiere
                     {
                         id = Convert.ToInt32(JsonLogin["id"].ToString()),
-                        infirmiere_badge = 
-                        fichier_photo = 
-                    };*/
+                        fichier_photo = null,
+                    };
+
                     maConnexion.personne.Add(p);
                     maConnexion.personne_login.Add(pl);
+                    maConnexion.infirmiere.Add(i);
                     maConnexion.SaveChanges();
-                    vretour = "Ajout OK";
+                    vretour = i.id; //renvoi l'id de la personne
                 }
-
-                catch (Exception e) { vretour = e.ToString(); }
+                catch (Exception)
+                { vretour = -1; } //ajout problème
             }
-            else { vretour = "Votre compte n'existe pas";}
-            
+            else { vretour = -2; } //id ou mdp incorrect liens incorrect status false
             return vretour;
         }
 
 
-        /*    public static bool AjoutPersonne_login(int unid, string lelogin, string lemdp, DateTime laderniereco, int unnb)
-            {
-                bool vretour = true;
-                try
-                {
-                    personne_login PL = new personne_login();
-                    PL.id = unid;
-                    PL.login = lelogin;
-                    PL.mp = lemdp;
-                    PL.derniere_connexion = laderniereco;
-                    PL.nb_tentative_erreur = unnb;
-                    maConnexion.personne_login.Add(PL);
-                    maConnexion.SaveChanges();
-                }
-                catch (Exception ex)
-                {
-                    vretour = false;
-                }
-                return vretour;
-            }*/
         public static string RapatrierMesVisites(int identifiant)
         {
             string vretour = "";
@@ -183,11 +170,12 @@ namespace Liémie
                                 patient = Convert.ToInt32(JsonVisites[index]["patient"]),
                                 infirmiere = identifiant,
                                 date_prevue = Convert.ToDateTime(JsonVisites[index]["date_prevue"], provider),
-                                date_reelle = null, //Convert.ToDateTime(JsonVisites[index]["date_reel"], provider),
                                 duree = Convert.ToInt32(JsonVisites[index]["duree"]),
                                 compte_rendu_infirmiere = Convert.ToString(JsonVisites[index]["compte_rendu_infirmiere"]),
                                 compte_rendu_patient = Convert.ToString(JsonVisites[index]["compte_rendu_patient"]),
                             };
+                            if (JsonVisites[index]["date_reelle"].ToString() != "0000-00-00 00:00:00") { v[n + 1].date_reelle = Convert.ToDateTime(JsonVisites[index]["date_reelle"], provider); }
+                            else { v[n + 1].date_reelle = null; }
                             maConnexion.visite.Add(v[n + 1]);
                         }
                         index++;
@@ -297,6 +285,7 @@ namespace Liémie
                           .OrderBy(x => x.date_prevue);
             return LQuery.ToList();
         }
+    
 
-    }
+}
 }
