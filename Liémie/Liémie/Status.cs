@@ -19,6 +19,7 @@ namespace Liémie
             InitializeComponent();           
             this.idUtilisateur = unIdUtilisateur;
            
+
         }
 
         private void Status_Load(object sender, EventArgs e)
@@ -31,7 +32,7 @@ namespace Liémie
 
         public void AfficherDGVMesVisites()
         {
-            lbltest.Text = model_Kaliemie.RapatrierPatient(idUtilisateur).ToString();
+            /*lbltest.Text = model_Kaliemie.RapatrierPatient(idUtilisateur).ToString();*/
             bs_visites.DataSource = model_Kaliemie.listVisites(idUtilisateur);
             dgv_visites.DataSource = bs_visites;
             for (int i = 0; i < dgv_visites.ColumnCount; i++)
@@ -61,6 +62,24 @@ namespace Liémie
             if (model_Kaliemie.RapatrierMesVisites(idUtilisateur) != "")
             { MessageBox.Show(model_Kaliemie.RapatrierMesVisites(idUtilisateur)); }
             AfficherDGVMesVisites();
+        }
+
+        private void lbltest_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void bs_visites_CurrentChanged(object sender, EventArgs e)
+        {
+            string i = "rien";
+            i = ((visite)bs_visites.Current).id.ToString(); ;
+            lbltest.Text=i;
+        }
+
+        private void btn_ajouter_Click(object sender, EventArgs e)
+        {
+            visites f = new visites();
+            f.Show();
         }
     }
 }

@@ -136,6 +136,9 @@
     <Compile Include="Status.Designer.cs">
       <DependentUpon>Status.cs</DependentUpon>
     </Compile>
+    <Compile Include="sysdiagrams.cs">
+      <DependentUpon>mdlKaliemie.tt</DependentUpon>
+    </Compile>
     <Compile Include="temoignage.cs">
       <DependentUpon>mdlKaliemie.tt</DependentUpon>
     </Compile>

@@ -35,6 +35,7 @@
             this.bs_visites = new System.Windows.Forms.BindingSource(this.components);
             this.lbltest = new System.Windows.Forms.Label();
             this.btnMaj = new System.Windows.Forms.Button();
+            this.btn_ajouter = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_visites)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bs_visites)).BeginInit();
             this.SuspendLayout();
@@ -52,10 +53,14 @@
             // dgv_visites
             // 
             this.dgv_visites.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_visites.Location = new System.Drawing.Point(253, 132);
+            this.dgv_visites.Location = new System.Drawing.Point(35, 132);
             this.dgv_visites.Name = "dgv_visites";
-            this.dgv_visites.Size = new System.Drawing.Size(240, 150);
+            this.dgv_visites.Size = new System.Drawing.Size(654, 150);
             this.dgv_visites.TabIndex = 1;
+            // 
+            // bs_visites
+            // 
+            this.bs_visites.CurrentChanged += new System.EventHandler(this.bs_visites_CurrentChanged);
             // 
             // lbltest
             // 
@@ -65,6 +70,7 @@
             this.lbltest.Size = new System.Drawing.Size(35, 13);
             this.lbltest.TabIndex = 2;
             this.lbltest.Text = "label2";
+            this.lbltest.Click += new System.EventHandler(this.lbltest_Click);
             // 
             // btnMaj
             // 
@@ -76,11 +82,22 @@
             this.btnMaj.UseVisualStyleBackColor = true;
             this.btnMaj.Click += new System.EventHandler(this.btnMaj_Click);
             // 
+            // btn_ajouter
+            // 
+            this.btn_ajouter.Location = new System.Drawing.Point(383, 319);
+            this.btn_ajouter.Name = "btn_ajouter";
+            this.btn_ajouter.Size = new System.Drawing.Size(138, 23);
+            this.btn_ajouter.TabIndex = 4;
+            this.btn_ajouter.Text = "ajouter une visite";
+            this.btn_ajouter.UseVisualStyleBackColor = true;
+            this.btn_ajouter.Click += new System.EventHandler(this.btn_ajouter_Click);
+            // 
             // Status
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btn_ajouter);
             this.Controls.Add(this.btnMaj);
             this.Controls.Add(this.lbltest);
             this.Controls.Add(this.dgv_visites);
@@ -103,5 +120,6 @@
         private System.Windows.Forms.BindingSource bs_visites;
         private System.Windows.Forms.Label lbltest;
         private System.Windows.Forms.Button btnMaj;
+        private System.Windows.Forms.Button btn_ajouter;
     }
 }

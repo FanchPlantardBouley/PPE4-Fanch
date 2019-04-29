@@ -44,5 +44,6 @@ namespace Liémie
         public virtual DbSet<type_soins> type_soins { get; set; }
         public virtual DbSet<visite> visite { get; set; }
         public virtual DbSet<administrateur> administrateur { get; set; }
+        public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
     }
 }

@@ -45,6 +45,7 @@
         <AssociationConnector Association="mdlKaliemie.soins_visite_soins_visite_ibfk_2" ManuallyRouted="false" />
         <AssociationConnector Association="mdlKaliemie.soins_visite_soins_visite_ibfk_1" ManuallyRouted="false" />
         <AssociationConnector Association="mdlKaliemie.specialisation" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="mdlKaliemie.sysdiagrams" Width="1.5" PointX="3.375" PointY="2.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
