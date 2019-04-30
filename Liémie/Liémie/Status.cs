@@ -78,7 +78,7 @@ namespace Liémie
 
         private void btn_ajouter_Click(object sender, EventArgs e)
         {
-            visites f = new visites();
+            visites f = new visites(((visite)bs_visites.Current).id);
             f.Show();
         }
     }

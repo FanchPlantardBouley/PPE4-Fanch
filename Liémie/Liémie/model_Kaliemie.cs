@@ -285,7 +285,25 @@ namespace Liémie
                           .OrderBy(x => x.date_prevue);
             return LQuery.ToList();
         }
-    
 
-}
+        public static List<categ_soins> listecatesoins()
+        {
+            return maConnexion.categ_soins.ToList();
+        }
+        public static List<type_soins> listetypesoins()
+        {
+            return maConnexion.type_soins.ToList();
+        }
+
+        public static Object Typesoins(int id_type)
+        {
+            var LQuery = maConnexion.type_soins.ToList()
+                           .Where(x => x.id_categ_soins == id_type)
+                           .Select(x => new { x.libel });
+            return LQuery.ToList();
+
+        }
+
+
+    }
 }

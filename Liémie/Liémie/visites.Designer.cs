@@ -28,17 +28,23 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(visites));
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.cbSoins = new System.Windows.Forms.ComboBox();
-            this.cbSoinsajou = new System.Windows.Forms.ComboBox();
-            this.cbTemps = new System.Windows.Forms.ComboBox();
-            this.tbCommentaire = new System.Windows.Forms.TextBox();
+            this.lblsoins = new System.Windows.Forms.Label();
+            this.cb_cate_soins = new System.Windows.Forms.ComboBox();
+            this.cb_soins = new System.Windows.Forms.ComboBox();
+            this.btnvalide = new System.Windows.Forms.Button();
+            this.bs_cate_soins = new System.Windows.Forms.BindingSource(this.components);
+            this.bs_type = new System.Windows.Forms.BindingSource(this.components);
+            this.cb_type = new System.Windows.Forms.ComboBox();
+            this.bs_soins = new System.Windows.Forms.BindingSource(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.bs_cate_soins)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bs_type)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bs_soins)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -66,87 +72,79 @@
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(118, 152);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(121, 13);
+            this.label3.Size = new System.Drawing.Size(94, 13);
             this.label3.TabIndex = 2;
-            this.label3.Text = "Soins prévus effectués :";
+            this.label3.Text = "Catégorie de soins";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(118, 193);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(76, 13);
+            this.label4.Size = new System.Drawing.Size(79, 13);
             this.label4.TabIndex = 3;
-            this.label4.Text = "Soins ajoutés :";
+            this.label4.Text = "Type de soins :";
             // 
-            // label5
+            // lblsoins
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(118, 229);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(74, 13);
-            this.label5.TabIndex = 4;
-            this.label5.Text = "Commentaire :";
+            this.lblsoins.AutoSize = true;
+            this.lblsoins.Location = new System.Drawing.Point(118, 229);
+            this.lblsoins.Name = "lblsoins";
+            this.lblsoins.Size = new System.Drawing.Size(39, 13);
+            this.lblsoins.TabIndex = 4;
+            this.lblsoins.Text = "Soins :";
             // 
-            // label6
+            // cb_cate_soins
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(116, 269);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(76, 13);
-            this.label6.TabIndex = 5;
-            this.label6.Text = "Temps passé :";
-            // 
-            // cbSoins
-            // 
-            this.cbSoins.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbSoins.FormattingEnabled = true;
-            this.cbSoins.Items.AddRange(new object[] {
+            this.cb_cate_soins.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cb_cate_soins.FormattingEnabled = true;
+            this.cb_cate_soins.Items.AddRange(new object[] {
             "Oui",
             "Non"});
-            this.cbSoins.Location = new System.Drawing.Point(270, 152);
-            this.cbSoins.Name = "cbSoins";
-            this.cbSoins.Size = new System.Drawing.Size(121, 21);
-            this.cbSoins.TabIndex = 6;
+            this.cb_cate_soins.Location = new System.Drawing.Point(270, 152);
+            this.cb_cate_soins.Name = "cb_cate_soins";
+            this.cb_cate_soins.Size = new System.Drawing.Size(466, 21);
+            this.cb_cate_soins.TabIndex = 6;
+            this.cb_cate_soins.SelectedIndexChanged += new System.EventHandler(this.cbcatesoins_SelectedIndexChanged);
             // 
-            // cbSoinsajou
+            // cb_soins
             // 
-            this.cbSoinsajou.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbSoinsajou.FormattingEnabled = true;
-            this.cbSoinsajou.Items.AddRange(new object[] {
-            "Oui",
-            "Non"});
-            this.cbSoinsajou.Location = new System.Drawing.Point(234, 190);
-            this.cbSoinsajou.Name = "cbSoinsajou";
-            this.cbSoinsajou.Size = new System.Drawing.Size(121, 21);
-            this.cbSoinsajou.TabIndex = 7;
+            this.cb_soins.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cb_soins.FormattingEnabled = true;
+            this.cb_soins.Location = new System.Drawing.Point(270, 226);
+            this.cb_soins.Name = "cb_soins";
+            this.cb_soins.Size = new System.Drawing.Size(466, 21);
+            this.cb_soins.TabIndex = 10;
             // 
-            // cbTemps
+            // btnvalide
             // 
-            this.cbTemps.FormattingEnabled = true;
-            this.cbTemps.Location = new System.Drawing.Point(234, 266);
-            this.cbTemps.Name = "cbTemps";
-            this.cbTemps.Size = new System.Drawing.Size(121, 21);
-            this.cbTemps.TabIndex = 8;
+            this.btnvalide.Location = new System.Drawing.Point(287, 306);
+            this.btnvalide.Name = "btnvalide";
+            this.btnvalide.Size = new System.Drawing.Size(75, 23);
+            this.btnvalide.TabIndex = 11;
+            this.btnvalide.Text = "Valider";
+            this.btnvalide.UseVisualStyleBackColor = true;
             // 
-            // tbCommentaire
+            // cb_type
             // 
-            this.tbCommentaire.Location = new System.Drawing.Point(234, 226);
-            this.tbCommentaire.Name = "tbCommentaire";
-            this.tbCommentaire.Size = new System.Drawing.Size(100, 20);
-            this.tbCommentaire.TabIndex = 9;
+            this.cb_type.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cb_type.FormattingEnabled = true;
+            this.cb_type.Location = new System.Drawing.Point(270, 190);
+            this.cb_type.Name = "cb_type";
+            this.cb_type.Size = new System.Drawing.Size(466, 21);
+            this.cb_type.TabIndex = 12;
+            this.cb_type.SelectedIndexChanged += new System.EventHandler(this.cb_type_SelectedIndexChanged);
             // 
             // visites
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.tbCommentaire);
-            this.Controls.Add(this.cbTemps);
-            this.Controls.Add(this.cbSoinsajou);
-            this.Controls.Add(this.cbSoins);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.label5);
+            this.Controls.Add(this.cb_type);
+            this.Controls.Add(this.btnvalide);
+            this.Controls.Add(this.cb_soins);
+            this.Controls.Add(this.cb_cate_soins);
+            this.Controls.Add(this.lblsoins);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -154,6 +152,10 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "visites";
             this.Text = "visites";
+            this.Load += new System.EventHandler(this.visites_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.bs_cate_soins)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bs_type)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bs_soins)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -165,11 +167,13 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.ComboBox cbSoins;
-        private System.Windows.Forms.ComboBox cbSoinsajou;
-        private System.Windows.Forms.ComboBox cbTemps;
-        private System.Windows.Forms.TextBox tbCommentaire;
+        private System.Windows.Forms.Label lblsoins;
+        private System.Windows.Forms.ComboBox cb_cate_soins;
+        private System.Windows.Forms.ComboBox cb_soins;
+        private System.Windows.Forms.Button btnvalide;
+        private System.Windows.Forms.BindingSource bs_cate_soins;
+        private System.Windows.Forms.BindingSource bs_type;
+        private System.Windows.Forms.ComboBox cb_type;
+        private System.Windows.Forms.BindingSource bs_soins;
     }
 }
