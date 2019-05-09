@@ -295,6 +295,11 @@ namespace Liémie
             return maConnexion.type_soins.ToList();
         }
 
+        public static List<soins> listesoins()
+        {
+            return maConnexion.soins.ToList();
+        }
+
         public static Object Typesoins(int id_type)
         {
             var LQuery = maConnexion.type_soins.ToList()
@@ -302,6 +307,28 @@ namespace Liémie
                            .Select(x => new { x.libel });
             return LQuery.ToList();
 
+        }
+        public static string AjouterSoinsVisite(int idVisite, int idCategSoins, int idTypeSoins, int idSoins, short prevu, short realise)
+        {
+            string vretour = "";
+            try
+            {
+                soins_visite sv = new soins_visite
+                {
+                    visite = idVisite,
+                    id_categ_soins = idCategSoins,
+                    id_type_soins = idTypeSoins,
+                    id_soins = idSoins,
+                    prevu = prevu,
+                    realise = realise,
+                };
+                maConnexion.soins_visite.Add(sv);
+                maConnexion.SaveChanges();
+                vretour = "visite enregistrée";
+            }
+            catch (Exception e) { vretour = e.ToString(); }
+
+            return vretour;
         }
 
 

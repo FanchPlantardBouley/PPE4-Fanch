@@ -39,6 +39,8 @@ namespace Liémie
             {
                 dgv_visites.Columns[i].Visible = false;
             }
+            dgv_visites.Columns["id"].Visible = true;
+            dgv_visites.Columns["id"].HeaderText = "N°";
             dgv_visites.Columns["patient"].Visible = true;
             dgv_visites.Columns["patient"].HeaderText = "Patient";
             dgv_visites.Columns["date_prevue"].Visible = true;
@@ -51,6 +53,7 @@ namespace Liémie
             dgv_visites.Columns["compte_rendu_infirmiere"].HeaderText = "Compte rendu infirmiere";
             dgv_visites.Columns["compte_rendu_patient"].Visible = true;
             dgv_visites.Columns["compte_rendu_patient"].HeaderText = "Compte rendu patient";
+            dgv_visites.AutoResizeColumns();
         }
 
     
@@ -71,15 +74,16 @@ namespace Liémie
 
         private void bs_visites_CurrentChanged(object sender, EventArgs e)
         {
-            string i = "rien";
-            i = ((visite)bs_visites.Current).id.ToString(); ;
-            lbltest.Text=i;
+
         }
 
         private void btn_ajouter_Click(object sender, EventArgs e)
         {
-            visites f = new visites(((visite)bs_visites.Current).id);
-            f.Show();
+            if (dgv_visites.SelectedCells.Count > 0)
+            {
+                new ajoutdesvisites(((visite)bs_visites.Current).id).Show();
+            }
+            
         }
     }
 }

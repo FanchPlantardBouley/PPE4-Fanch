@@ -58,10 +58,6 @@
             this.dgv_visites.Size = new System.Drawing.Size(654, 150);
             this.dgv_visites.TabIndex = 1;
             // 
-            // bs_visites
-            // 
-            this.bs_visites.CurrentChanged += new System.EventHandler(this.bs_visites_CurrentChanged);
-            // 
             // lbltest
             // 
             this.lbltest.AutoSize = true;

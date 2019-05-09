@@ -151,11 +151,11 @@
     <Compile Include="visite.cs">
       <DependentUpon>mdlKaliemie.tt</DependentUpon>
     </Compile>
-    <Compile Include="visites.cs">
+    <Compile Include="ajoutdesvisites.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="visites.Designer.cs">
-      <DependentUpon>visites.cs</DependentUpon>
+    <Compile Include="ajoutdesvisites.Designer.cs">
+      <DependentUpon>ajoutdesvisites.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Liémie.resx">
       <DependentUpon>Liémie.cs</DependentUpon>
@@ -173,8 +173,8 @@
     <EmbeddedResource Include="Status.resx">
       <DependentUpon>Status.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="visites.resx">
-      <DependentUpon>visites.cs</DependentUpon>
+    <EmbeddedResource Include="ajoutdesvisites.resx">
+      <DependentUpon>ajoutdesvisites.cs</DependentUpon>
     </EmbeddedResource>
     <EntityDeploy Include="mdlKaliemie.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
